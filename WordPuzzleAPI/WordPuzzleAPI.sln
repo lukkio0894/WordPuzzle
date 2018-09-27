@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2042
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPuzzleAPI", "WordPuzzleAPI\WordPuzzleAPI.csproj", "{7795AD8E-B37E-49B6-9A26-06F288E308F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WordPuzzleModel", "..\WordPuzzleModel\WordPuzzleModel.csproj", "{D4902523-B019-44B1-B3F5-852F75CDA7C3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7795AD8E-B37E-49B6-9A26-06F288E308F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7795AD8E-B37E-49B6-9A26-06F288E308F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7795AD8E-B37E-49B6-9A26-06F288E308F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7795AD8E-B37E-49B6-9A26-06F288E308F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4902523-B019-44B1-B3F5-852F75CDA7C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4902523-B019-44B1-B3F5-852F75CDA7C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4902523-B019-44B1-B3F5-852F75CDA7C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4902523-B019-44B1-B3F5-852F75CDA7C3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BB983A9E-3C9A-4176-8D03-C4B4B53D628A}
+	EndGlobalSection
+EndGlobal

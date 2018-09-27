@@ -1,0 +1,9 @@
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\bin\Release\WordPuzzleModel.dll
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\bin\Release\WordPuzzleModel.pdb
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\bin\Release\Newtonsoft.Json.dll
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\bin\Release\Newtonsoft.Json.xml
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\obj\Release\WordPuzzleModel.csprojAssemblyReference.cache
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\obj\Release\WordPuzzleModel.csproj.CoreCompileInputs.cache
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\obj\Release\WordPuzzleModel.csproj.CopyComplete
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\obj\Release\WordPuzzleModel.dll
+C:\Users\LUIS_\OneDrive\Documentos\GitHub\WordPuzzle\WordPuzzleModel\obj\Release\WordPuzzleModel.pdb

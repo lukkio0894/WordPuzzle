@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="form">
+        <span class="title">Type a word</span>
+        <form>
+            <mat-form-field>
+                <input matInput  name="txtWord" [(ngModel)]="word"/>
+            </mat-form-field>
+            <button mat-raised-button (click)="Search()">Search</button>
+        </form>
+    </div>
+    <div class="words">
+        <mat-chip-list>
+            <mat-chip *ngFor="let word of words;" (click)="SearchWord($event)">{{word}}</mat-chip>
+          </mat-chip-list>
+    </div>
+    <div class="table">
+        <table>
+            <tr *ngFor="let row of multi;">
+             <td *ngFor="let col of row" [ngClass]="{'specialCell' : col.inPath}">{{col.Value}}</td>
+            </tr>
+          </table>
+    </div>
+</div>
