@@ -1,23 +1,27 @@
 <div class="container">
-    <div class="form">
-        <span class="title">Type a word</span>
-        <form>
-            <mat-form-field>
-                <input matInput  name="txtWord" [(ngModel)]="word"/>
-            </mat-form-field>
-            <button mat-raised-button (click)="Search()">Search</button>
-        </form>
+    <div class="form-container">
+        <div class="form">
+            <form>
+                <mat-form-field>
+                    <input matInput placeholder="Search word.." name="txtWord" [(ngModel)]="word" />
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click)="Search()">Search</button>
+            </form>
+        </div>
     </div>
     <div class="words">
         <mat-chip-list>
-            <mat-chip *ngFor="let word of words;" (click)="SearchWord($event)">{{word}}</mat-chip>
-          </mat-chip-list>
+            <mat-chip *ngFor="let word of words;" class="chips" (click)="SearchWord($event)">{{word}}</mat-chip>
+        </mat-chip-list>
     </div>
     <div class="table">
+        <div>
+            <span>Your words will appear in blue</span>
+        </div>
         <table>
             <tr *ngFor="let row of multi;">
-             <td *ngFor="let col of row" [ngClass]="{'specialCell' : col.inPath}">{{col.Value}}</td>
+                <td *ngFor="let col of row" [ngClass]="{'specialCell' : col.inPath}">{{col.Value}}</td>
             </tr>
-          </table>
+        </table>
     </div>
 </div>

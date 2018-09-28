@@ -1,22 +1,75 @@
+$break-small-table:850px;
+$break-small-form:600;
+
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+.container{
+    position: relative;
+    background-color: #f5f5f5;
+    height: 100%;
+    max-height: 100%;
+}
+
+.form-container{
+    
+background-color: #2954A4;
+    width: 100%;
+    height: 100px;
+    position: relative
+}
+
+.form{
+      @include centerer;
+
+margin-bottom: 4rem;
+
+button{
+    margin-left: 5px;
+}
+
+}
+
+.title{
+    width: 100%;
+    background-color: #091F48;
+    color: white;
+    font-size: 20px;
+}
+
 .table{
+    position: relative;
     color: #091F48;
     width: 100%;
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
+    height: 60%;
+    overflow-x:auto;
+    overflow-y:scroll;
+    position: relative;
+    background-color: #E5F4F7;
+
+
     table{
+        @media screen and (min-width: $break-small-table) {
+            @include centerer;
+          }
+       
         width: 50%;
         height: 50%;
    background-color: #9DBAEE;
+
+ 
     }
     td{
        text-align: center;
        border:1px solid white;
+       height: 1px;
+       width: 1px;
     }
+
     .specialCell{
         background-color: blue;
         color: white;
@@ -25,8 +78,12 @@
 
 .words{
     background-color: #E5F4F7;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    margin-bottom: 4rem;
+    margin-top: 4rem;
+}
+
+.mat-chip-list-wrapper{
+    margin-left: 1rem;
 }
 
 .GridList{
@@ -34,24 +91,10 @@
     width: 100%;
 }
 
-.form{
-background-color: #2954A4;
-
-.title{
-    margin: auto;
-    width: 100%;
-    background-color: #091F48;
-    color: white;
-    font-size: 20px;
-}
+.chips{
+    background-color: #54057C;
 }
 
-.container{
-    max-height: 100%;
-    background-color: #f5f5f5;
-    margin-left: 5px;
-    margin-right: 5px;
-    height: 100%;
-margin: 0px auto;
-overflow: hidden;
-}
+
+
+

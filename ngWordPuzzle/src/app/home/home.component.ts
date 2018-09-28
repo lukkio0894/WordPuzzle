@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {WordPuzzleServiceService} from '../word-puzzle-service.service'
+import { WordPuzzleServiceService } from '../word-puzzle-service.service'
 
 @Component({
   selector: 'app-home',
@@ -8,64 +8,66 @@ import {WordPuzzleServiceService} from '../word-puzzle-service.service'
 })
 export class HomeComponent implements OnInit {
 
- matrix:string[][] = [];
+  matrix: string[][] = [];
 
-  multi:Letter[][] = [];
+  multi: Letter[][] = [];
 
-  words:string[] = [];
+  words: string[] = [];
 
-  word:string  = "";
+  word: string = "";
 
-  lastSearch:any[] = [];
+  lastSearch: any[] = [];
 
-  constructor(private wordPuzzleService:WordPuzzleServiceService) { }
+  constructor(private wordPuzzleService: WordPuzzleServiceService) { }
 
   ngOnInit() {
-    this.wordPuzzleService.puzzle.subscribe(res=> this.FillMulti(res));
-    this.wordPuzzleService.breakdown.subscribe(res=>this.searchResult(res));
-    this.wordPuzzleService.words.subscribe(res=>this.words=res);
+    this.wordPuzzleService.puzzle.subscribe(res => this.FillMulti(res));
+    this.wordPuzzleService.breakdown.subscribe(res => this.searchResult(res));
+    this.wordPuzzleService.words.subscribe(res => this.words = res);
   }
 
-  FillMulti(res){
-    this.matrix=res;
-    for(let i = 0;i<this.matrix.length;i++){
+  FillMulti(res) {
+    this.matrix = res;
+    for (let i = 0; i < this.matrix.length; i++) {
       let line = this.matrix[i];
-      this.multi[i]=[];
-      for(let j=0;j<line.length;j++){
+      this.multi[i] = [];
+      for (let j = 0; j < line.length; j++) {
         let newLetter = new Letter();
-        newLetter.inPath=false;
-        newLetter.Value= this.matrix[i][j];
-this.multi[i][j]=newLetter;
+        newLetter.inPath = false;
+        newLetter.Value = this.matrix[i][j];
+        this.multi[i][j] = newLetter;
       }
     }
   }
-  
-  Search(){
-    this.ResetSearch();
-    this.words.push(this.word);
-   this.wordPuzzleService.SearchWord(this.word);
-  }
 
-  SearchWord(event){
-    this.word="";
+  Search() {
     this.ResetSearch();
-      this.wordPuzzleService.SearchWord(event.target.innerText);
-  }
-
-  searchResult(res){
-    if(res.Breakdown!= undefined){
-      res.Breakdown.forEach(element => {
-        this.multi[element.Row][element.Column].inPath=true;
-      });
-      this.lastSearch=res.Breakdown;
+    if (this.word != "") {
+      this.words.push(this.word);
+      this.wordPuzzleService.SearchWord(this.word);
     }
   }
 
-  ResetSearch(){
+  SearchWord(event) {
+    this.word = "";
+    this.ResetSearch();
+    this.wordPuzzleService.SearchWord(event.target.innerText);
+  }
+
+  searchResult(res) {
+    if (res.Breakdown != undefined) {
+      res.Breakdown.forEach(element => {
+        this.multi[element.Row][element.Column].inPath = true;
+      });
+      this.lastSearch = res.Breakdown;
+    }
+  }
+
+  ResetSearch() {
     this.lastSearch.forEach(element => {
-      this.multi[element.Row][element.Column].inPath=false;
+      this.multi[element.Row][element.Column].inPath = false;
     });
-    this.lastSearch=[];
+    this.lastSearch = [];
   }
 
 }

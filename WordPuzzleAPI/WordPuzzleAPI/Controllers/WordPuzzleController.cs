@@ -19,31 +19,46 @@ namespace WordPuzzleAPI.Controllers
     public class WordPuzzleController : ApiController
     {
         [HttpGet]
-        public string CheckStatus()
-        {
-            return "OK";
-        }
-
-        [HttpGet]
         public IEnumerable<char[]> Puzzle()
         {
-            DecrypterService puzzleService = new DecrypterService(new JsonBaseReader(), new JsonValuesReader(), new MarkovDecrypter());
-            return puzzleService.GetMatrix(ConfigurationManagerHelper.GetKey("ValuesPath"), ConfigurationManagerHelper.GetKey("BasePath"), ConfigurationManagerHelper.GetKey("CypherPath")).Select(E => E.ToCharArray());
+            try
+            {
+                DecrypterService puzzleService = new DecrypterService(new JsonBaseReader(), new JsonValuesReader(), new MarkovDecrypter());
+                return puzzleService.GetMatrix(ConfigurationManagerHelper.GetKey("ValuesPath"), ConfigurationManagerHelper.GetKey("BasePath"), ConfigurationManagerHelper.GetKey("CypherPath")).Select(E => E.ToCharArray());
+            }
+            catch (Exception)
+            {
+                return new List<char[]>();
+            }
         }
 
         [HttpPost]
         [HttpOptions]
         public DTOSearchResult SearchWord([FromBody]DTOSearch word)
         {
-            PuzzleService service = new PuzzleService();
-            return service.SearchWord(word);
+            try
+            {
+                PuzzleService service = new PuzzleService();
+                return service.SearchWord(word);
+            }
+            catch (Exception)
+            {
+                return new DTOSearchResult() { Breakdown = new List<LettersModel>(), Word = string.Empty };
+            }
         }
 
         [HttpGet]
         public List<string> GetWords()
         {
-            PuzzleService service = new PuzzleService();
-            return service.GetWords(ConfigurationManagerHelper.GetKey("WordsPath"));
+            try
+            {
+                PuzzleService service = new PuzzleService();
+                return service.GetWords(ConfigurationManagerHelper.GetKey("WordsPath"));
+            }
+            catch (Exception)
+            {
+                return new List<string>();
+            }
         }
 
     }
